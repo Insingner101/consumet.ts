@@ -8,7 +8,7 @@
     "build": "rimraf dist && tsc -p tsconfig.json",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "lint": "prettier --write .",
-    "prepare": "husky || true",
+    "prepare": "if [ -d .git ]; then husky || true; fi",
     "test": "jest",
     "test:anime": "jest ./test/anime",
     "test:books": "jest ./test/books/libgen.test.ts",
